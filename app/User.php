@@ -50,7 +50,7 @@ class User extends Authenticatable
     {
         $short = Str::random(5);
         if (Url::where('short', $short)->first()) {
-            return User::generateShortUrl();
+            return self::generateShortUrl();
         }
         return $short;
     }
